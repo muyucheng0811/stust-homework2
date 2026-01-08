@@ -1,0 +1,20 @@
+[
+  {
+    "CourseName": "視窗程式設計",
+    "Type": "選修",
+    "Credits": 3,
+    "ClassID": "四技資工2A"
+  },
+  {
+    "CourseName": "資料結構",
+    "Type": "必修",
+    "Credits": 3,
+    "ClassID": "四技資工二丙"
+  },
+  {
+    "CourseName": "作業系統",
+    "Type": "必修",
+    "Credits": 3,
+    "ClassID": "四技資工2A"
+  }
+]
