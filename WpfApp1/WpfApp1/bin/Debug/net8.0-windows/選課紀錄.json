@@ -1,0 +1,32 @@
+﻿[
+  {
+    "Id": "S001",
+    "Name": "陳小明",
+    "SelectedCourses": [
+      {
+        "Id": "C001",
+        "Name": "視窗程式設計",
+        "Credit": 3,
+        "ClassName": "四技資工2A",
+        "TeacherName": "陳定宏"
+      },
+      {
+        "Id": "C006",
+        "Name": "行動程式設計",
+        "Credit": 2,
+        "ClassName": "四技資管4甲",
+        "TeacherName": "林怡君"
+      }
+    ]
+  },
+  {
+    "Id": "S002",
+    "Name": "林怡君",
+    "SelectedCourses": []
+  },
+  {
+    "Id": "S003",
+    "Name": "王美玲",
+    "SelectedCourses": []
+  }
+]

@@ -1,0 +1,75 @@
+﻿<Window x:Class="CourseSelectionApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="學生選課系統" Height="600" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 第 1 列：學生 ComboBox -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,8">
+            <Label Content="學生" VerticalAlignment="Center" Margin="0,0,8,0"/>
+            <ComboBox x:Name="cboStudents"
+                      Width="220"
+                      SelectionChanged="cboStudents_SelectionChanged"/>
+        </StackPanel>
+
+        <!-- 第 2 列：左(課程) / 中(按鈕) / 右(已選課程) -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 左邊：課程 TabControl -->
+            <TabControl x:Name="tabCourses" Grid.Column="0">
+                <!-- 以教師分類課程 -->
+                <TabItem Header="以教師分類課程">
+                    <Border Margin="4" Background="#FFEFFFEF">
+                        <TreeView x:Name="tvTeachers" />
+                    </Border>
+                </TabItem>
+
+                <!-- 所有課程列表 -->
+                <TabItem Header="所有課程列表">
+                    <Border Margin="4" Background="#FFEFFFEF">
+                        <ListBox x:Name="lstAllCourses" />
+                    </Border>
+                </TabItem>
+            </TabControl>
+
+            <!-- 中間：按鈕區 -->
+            <StackPanel Grid.Column="1" Margin="12,0" VerticalAlignment="Center">
+                <Button x:Name="btnAddCourse" Content="選課"
+                        Width="80" Margin="0,0,0,10"
+                        Click="btnAddCourse_Click"/>
+                <Button x:Name="btnDropCourse" Content="退選"
+                        Width="80" Margin="0,0,0,10"
+                        Click="btnDropCourse_Click"/>
+                <Button x:Name="btnSave" Content="存檔"
+                        Width="80"
+                        Click="btnSave_Click"/>
+            </StackPanel>
+
+            <!-- 右邊：已選課程 -->
+            <GroupBox Grid.Column="2" Header="已選課程">
+                <Border Margin="4" Background="#FFFFF5E6">
+                    <ListBox x:Name="lstSelectedCourses" />
+                </Border>
+            </GroupBox>
+        </Grid>
+
+        <!-- 第 3 列：狀態列 -->
+        <Border Grid.Row="2" Margin="0,8,0,0"
+                Background="#FFEFEFEF" Height="26">
+            <TextBlock x:Name="txtStatus"
+                       Margin="8,0"
+                       VerticalAlignment="Center"
+                       Text="狀態訊息顯示區"/>
+        </Border>
+    </Grid>
+</Window>
